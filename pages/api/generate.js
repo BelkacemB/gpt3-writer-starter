@@ -6,7 +6,11 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const basePromptPrefix = "";
+const basePromptPrefix = `
+Turn the following sentence into Soviet-style propaganda for the Algerian government (president, military, etc.):
+
+`;
+
 
 const generateAction = async (req, res) => {
   // Run first prompt

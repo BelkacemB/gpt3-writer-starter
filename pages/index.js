@@ -39,10 +39,10 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Have a conversation with Adam Smith</h1>
+            <h1>Generate ENTV style propaganda</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Write a message to Adam Smith, ask him about anything (ex. what’s the Invisible Hand, how does a country become rich, etc).</h2>
+            <h2>Write a random sentence and watch it turn into ENTV propaganda</h2>
           </div>
         </div>
         <div className="prompt-container">
@@ -54,12 +54,28 @@ const Home = () => {
           />
         </div>
         <div className="prompt-buttons">
-          <a className="generate-button" onClick={callGenerateEndpoint}>
+          <a
+            className={isGenerating ? 'generate-button loading' : 'generate-button'}
+            onClick={callGenerateEndpoint}
+          >
             <div className="generate">
-              <p>Generate</p>
+              {isGenerating ? <span class="loader"></span> : <p>Generate</p>}
             </div>
           </a>
         </div>
+        {/* New code I added here */}
+        {apiOutput && (
+          <div className="output">
+            <div className="output-header-container">
+              <div className="output-header">
+                <h3>Output</h3>
+              </div>
+            </div>
+            <div className="output-content">
+              <p>{apiOutput}</p>
+            </div>
+          </div>
+        )}
       </div>
       <div className="badge-container grow">
         <a
