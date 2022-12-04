@@ -7,7 +7,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const basePromptPrefix = `
-Turn the following sentence into Soviet-style propaganda for the Algerian government (president, military, etc.):
+Turn the following sentence into DPRK news service style propaganda for Algeria's president, Abdelmadjid Tebboune:'
 
 `;
 
